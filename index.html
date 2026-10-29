@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="TaskPilot helps remote teams manage projects, automate tasks, and predict project delays using AI."
+    />
+
+    <title>TaskPilot | Smarter Project Management</title>
+
+    <!-- Connect the CSS stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Connect the JavaScript file -->
+    <script src="js/script.js" defer></script>
+  </head>
+
+  <body>
+    <!-- ================= HEADER & NAVIGATION ================= -->
+    <header class="site-header">
+      <nav class="navbar" aria-label="Main navigation">
+        <a href="#home" class="logo"> TaskPilot </a>
+
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            type="button"
+            aria-label="Switch colour theme"
+          >
+            Toggle Theme
+          </button>
+
+          <a href="#pricing" class="button button-primary"> Get Started </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main>
+      <!-- ================= HERO SECTION ================= -->
+      <section class="hero" id="home">
+        <div class="hero-content">
+          <p class="eyebrow">AI-powered project management</p>
+
+          <h1>
+            Work Smarter.
+            <span>Achieve More.</span>
+          </h1>
+
+          <p class="hero-description">
+            TaskPilot helps your team manage projects, automate repetitive
+            tasks, and stay ahead of deadlines with intelligent AI-powered
+            tools.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#pricing" class="button button-primary">
+              Start Free Trial
+            </a>
+
+            <a href="#features" class="button button-secondary">
+              Explore Features
+            </a>
+          </div>
+
+          <p class="hero-note">
+            No credit card required. Start managing smarter today.
+          </p>
+        </div>
+
+        <!-- Dashboard illustration built with HTML -->
+        <div class="hero-visual">
+          <div class="dashboard-card">
+            <div class="dashboard-header">
+              <h2>Project Overview</h2>
+              <span class="status-badge">On Track</span>
+            </div>
+
+            <div class="dashboard-stats">
+              <div class="stat-card">
+                <p>Active Projects</p>
+                <h3>12</h3>
+              </div>
+
+              <div class="stat-card">
+                <p>Completed Tasks</p>
+                <h3>84</h3>
+              </div>
+            </div>
+
+            <div class="dashboard-task">
+              <h3>Team Progress</h3>
+
+              <div class="progress-item">
+                <p>Website Redesign</p>
+                <span>85%</span>
+              </div>
+
+              <div class="progress-bar">
+                <div class="progress-fill progress-85"></div>
+              </div>
+
+              <div class="progress-item">
+                <p>Mobile Application</p>
+                <span>60%</span>
+              </div>
+
+              <div class="progress-bar">
+                <div class="progress-fill progress-60"></div>
+              </div>
+
+              <div class="progress-item">
+                <p>Marketing Campaign</p>
+                <span>40%</span>
+              </div>
+
+              <div class="progress-bar">
+                <div class="progress-fill progress-40"></div>
+              </div>
+            </div>
+
+            <div class="ai-insight">
+              <h3>AI Insight</h3>
+              <p>
+                Your website redesign project is progressing well. Two tasks may
+                need attention this week.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= FEATURES SECTION ================= -->
+      <section class="features section" id="features">
+        <div class="section-heading">
+          <p class="eyebrow">Powerful features</p>
+
+          <h2>Everything Your Team Needs to Succeed</h2>
+
+          <p>
+            Bring your projects, people, and productivity together in one
+            intelligent workspace.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <article class="feature-card">
+            <h3>AI Predictions</h3>
+
+            <p>
+              Identify potential project delays early and receive intelligent
+              recommendations to keep work on track.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3>Automatic Task Assignment</h3>
+
+            <p>
+              Assign tasks based on team availability, skills, and workload.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3>Smart Reports</h3>
+
+            <p>
+              Generate project progress reports and understand your team's
+              performance more easily.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3>Team Collaboration</h3>
+
+            <p>
+              Keep your team connected with shared tasks, project updates, and
+              communication.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3>Integrations</h3>
+
+            <p>
+              Connect your workflow with tools such as Slack, GitHub, and Figma.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3>Progress Tracking</h3>
+
+            <p>
+              Monitor deadlines, task completion, and project milestones from
+              one dashboard.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================= TESTIMONIALS SECTION ================= -->
+      <section class="testimonials section" id="testimonials">
+        <div class="section-heading">
+          <p class="eyebrow">Customer stories</p>
+
+          <h2>What Teams Say About TaskPilot</h2>
+
+          <p>
+            Illustrative testimonials showing the kind of value TaskPilot aims
+            to deliver.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <p>
+              "TaskPilot gives our team a clearer view of priorities and helps
+              us stay organized."
+            </p>
+
+            <h3>Sarah Johnson</h3>
+            <span>Project Manager</span>
+          </article>
+
+          <article class="testimonial-card">
+            <p>
+              "The AI insights help us identify potential problems before they
+              become major delays."
+            </p>
+
+            <h3>David Miller</h3>
+            <span>Software Team Lead</span>
+          </article>
+
+          <article class="testimonial-card">
+            <p>
+              "Managing several projects feels much easier when everything is in
+              one workspace."
+            </p>
+
+            <h3>Emily Carter</h3>
+            <span>Operations Manager</span>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================= PRICING SECTION ================= -->
+      <section class="pricing section" id="pricing">
+        <div class="section-heading">
+          <p class="eyebrow">Simple pricing</p>
+
+          <h2>Choose the Right Plan for Your Team</h2>
+
+          <p>Start for free and upgrade as your team grows.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Starter Plan -->
+          <article class="pricing-card">
+            <h3>Starter</h3>
+
+            <p>Perfect for individuals and small projects.</p>
+
+            <p class="price">Free</p>
+
+            <ul>
+              <li>Basic project management</li>
+              <li>Task tracking</li>
+              <li>Team collaboration</li>
+              <li>Basic reports</li>
+            </ul>
+
+            <a href="#contact" class="button button-secondary"> Get Started </a>
+          </article>
+
+          <!-- Pro Plan -->
+          <article class="pricing-card popular-plan">
+            <span class="popular-label">Most Popular</span>
+
+            <h3>Pro</h3>
+
+            <p>For growing teams that need more control.</p>
+
+            <p class="price">
+              $12
+              <span>/user/month</span>
+            </p>
+
+            <ul>
+              <li>Everything in Starter</li>
+              <li>AI-powered predictions</li>
+              <li>Automatic task assignment</li>
+              <li>Advanced reports</li>
+              <li>Third-party integrations</li>
+            </ul>
+
+            <a href="#contact" class="button button-primary">
+              Start Pro Trial
+            </a>
+          </article>
+
+          <!-- Enterprise Plan -->
+          <article class="pricing-card">
+            <h3>Enterprise</h3>
+
+            <p>Advanced solutions for larger organizations.</p>
+
+            <p class="price">Custom</p>
+
+            <ul>
+              <li>Everything in Pro</li>
+              <li>Dedicated support</li>
+              <li>Advanced security options</li>
+              <li>Custom integrations</li>
+              <li>Flexible team management</li>
+            </ul>
+
+            <a href="#contact" class="button button-secondary">
+              Contact Sales
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================= FINAL CALL TO ACTION ================= -->
+      <section class="cta-section section" id="contact">
+        <div class="cta-content">
+          <h2>Ready to Transform the Way You Work?</h2>
+
+          <p>
+            Bring your team together, simplify your workflow, and make every
+            project count.
+          </p>
+
+          <a href="#home" class="button button-primary">
+            Get Started for Free
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="#home" class="logo">TaskPilot</a>
+
+          <p>Smarter project management for modern teams.</p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 TaskPilot. All rights reserved.</p>
+
+        <p>Built as a frontend development learning project.</p>
+      </div>
+    </footer>
+  </body>
+</html>
