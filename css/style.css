@@ -610,11 +610,39 @@ h1, h2, h3 {
   .nav-menu a {
     color: var(--main-text);
     font-size: 18px;
+    display: block;
+    padding: 15px 20px;
+    width: 100%;
+    text-align: left;
+    border-radius: 8px;
+    margin-bottom: 5px;
+  }
+
+  .nav-menu a:hover {
+    background-color: var(--primary-violet);
+    color: white;
+  }
+
+  .nav-menu .nav-actions {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: auto;
+    justify-content: flex-end;
+  }
+
+  .nav-menu .nav-actions .theme-toggle {
+    margin-bottom: 10px;
   }
 
   .nav-actions {
     width: 100%;
     justify-content: flex-end;
+    display: none;
+  }
+
+  .nav-menu.active + .nav-actions {
+    display: flex;
   }
 
   .hero h1 {
