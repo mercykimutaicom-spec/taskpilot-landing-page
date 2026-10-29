@@ -1,35 +1,106 @@
-/* Global styles */
+/* ==================================================
+   CSS VARIABLES - Theme System
+   ================================================== */
 
-body {
-  background-color: #f4f7fb;
-  color: #101b35;
-  font-family: Arial, sans-serif;
+/* Light Theme Variables */
+:root {
+  --primary-violet: #7C3AED;
+  --neon-mint: #10B981;
+  --background: #FFFFFF;
+  --card-background: #F4F4F9;
+  --main-text: #1E1B4B;
+  --muted-text: #6B7280;
+  --border-light: #E5E7EB;
 }
-/* Global styles */
 
-body {
-  background-color: #f4f7fb;
-  color: #101b35;
-  font-family: Arial, sans-serif;
+/* Dark Theme Variables */
+[data-theme="dark"] {
+  --background: #0B0F19;
+  --card-background: #1F2833;
+  --main-text: #F8FAFC;
+  --muted-text: #98A2B3;
+  --border-light: #334155;
 }
-/* Navigation bar */
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Body */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--background);
+  color: var(--main-text);
+  line-height: 1.6;
+}
+
+/* Sora for headings */
+h1, h2, h3 {
+  font-family: "Sora", sans-serif;
+}
+/* ==================================================
+   Navigation & Header
+   ================================================== */
 
 .site-header {
-  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: var(--card-background);
+  backdrop-filter: blur(8px);
   padding: 20px 5%;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .logo {
-  color: #101b35;
-  font-size: 24px;
-  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   text-decoration: none;
+}
+
+.logo svg {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.logo span {
+  font-family: "Sora", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--main-text);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background-color: var(--main-text);
+  margin: 5px 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .nav-menu {
@@ -41,12 +112,32 @@ body {
 }
 
 .nav-menu a {
-  color: #101b35;
+  color: var(--muted-text);
   text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s;
+  position: relative;
 }
 
 .nav-menu a:hover {
-  color: #176bce;
+  color: var(--primary-violet);
+}
+
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-violet);
+  transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
 }
 
 .nav-actions {
@@ -55,19 +146,489 @@ body {
   gap: 15px;
 }
 
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-text);
+  transition: color 0.2s;
+}
+
+.theme-toggle:hover {
+  color: var(--primary-violet);
+}
+
+.theme-toggle.sun {
+  color: var(--neon-mint);
+}
+
+.theme-toggle.moon {
+  color: var(--primary-violet);
+}
+
 .button {
   display: inline-block;
   padding: 12px 20px;
   border-radius: 8px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
 }
 
 .button-primary {
-  background-color: #176bce;
-  color: #ffffff;
+  background-color: var(--primary-violet);
+  color: white;
 }
 
 .button-primary:hover {
-  background-color: #101b35;
+  background-color: #6b42c7;
+  transform: translateY(-1px);
+}
+
+.button-secondary {
+  background-color: transparent;
+  color: var(--main-text);
+  border: 1px solid var(--border-light);
+}
+
+.button-secondary:hover {
+  border-color: var(--primary-violet);
+  color: var(--primary-violet);
+}
+/* ==================================================
+   Hero Section
+   ================================================== */
+
+.hero {
+  padding: 120px 5% 80px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--background);
+}
+
+.hero-content {
+  max-width: 900px;
+}
+
+.eyebrow {
+  font-family: "Sora", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primary-violet);
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-family: "Sora", sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--main-text);
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: var(--neon-mint);
+}
+
+.hero-description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--muted-text);
+  max-width: 550px;
+  margin-bottom: 30px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+  
+  .hero-actions {
+    justify-content: center;
+  }
+/* ==================================================
+   Features Section
+   ================================================== */
+
+.features {
+  padding: 80px 5%;
+  background-color: var(--card-background);
+}
+
+.section-title {
+  font-family: "Sora", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--main-text);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: var(--card-background);
+  padding: 40px 30px;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 20px;
+  color: var(--primary-violet);
+}
+
+.feature-card h3 {
+  font-family: "Sora", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--main-text);
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  color: var(--muted-text);
+  font-size: 14px;
+}
+
+/* ==================================================
+   Testimonials Section
+   ================================================== */
+
+.testimonials {
+  padding: 80px 5%;
+  background-color: var(--background);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  padding: 30px;
+  background: var(--card-background);
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+}
+
+.testimonial-card p {
+  color: var(--muted-text);
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.testimonial-card cite {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.testimonial-card cite img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-card cite .name {
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  color: var(--main-text);
+}
+
+.testimonial-card cite .role {
+  font-size: 14px;
+  color: var(--neon-mint);
+}
+
+/* ==================================================
+   Pricing Section
+   ================================================== */
+
+.pricing {
+  padding: 80px 5%;
+  background-color: var(--card-background);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  background: var(--card-background);
+  padding: 40px 30px;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card.popular-plan {
+  border-color: var(--primary-violet);
+  transform: scale(1.02);
+}
+
+.popular-label {
+  background: var(--primary-violet);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-family: "Sora", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.pricing-card.popular-plan .popular-label {
+  position: relative;
+  margin: 0 0 20px 0;
+  background: var(--primary-violet);
+}
+
+.pricing-card.popular-plan:hover {
+  border-color: var(--primary-violet);
+}
+
+.price {
+  font-family: "Sora", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--main-text);
+  margin: 20px 0;
+}
+
+.price span {
+  font-size: 14px;
+  color: var(--muted-text);
+  font-weight: normal;
+}
+
+.pricing-card ul {
+  list-style: none;
+  margin: 30px 0;
+}
+
+.pricing-card ul li {
+  padding: 12px 0;
+  color: var(--muted-text);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.pricing-card ul li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  color: var(--primary-violet);
+  font-weight: 500;
+}
+
+.pricing-card ul li.check {
+  color: var(--neon-mint);
+}
+
+.pricing-card .button {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* ==================================================
+   CTA Section
+   ================================================== */
+
+.cta-section {
+  padding: 80px 5%;
+  background: linear-gradient(135deg, var(--primary-violet), #6b42c7);
+  color: white;
+  text-align: center;
+}
+
+.cta-section .section-title {
+  color: white;
+}
+
+.cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-section p {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 20px 0 30px;
+}
+
+.cta-section .button-primary {
+  background: white;
+  color: var(--primary-violet);
+}
+
+.cta-section .button-primary:hover {
+  background: #e2d5f7;
+}
+/* ==================================================
+   Footer
+   ================================================== */
+
+.site-footer {
+  padding: 60px 5% 20px;
+  background-color: var(--background);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-brand a {
+  font-family: "Sora", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--main-text);
+  text-decoration: none;
+}
+
+.footer-brand p {
+  color: var(--muted-text);
+  font-size: 14px;
+}
+
+.footer-links h3 {
+  font-family: "Sora", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--main-text);
+  margin-bottom: 20px;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: var(--muted-text);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--primary-violet);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-light);
+  color: var(--muted-text);
+  font-size: 14px;
+  text-align: center;
+}
+/* ==================================================
+   Mobile Navigation
+   ================================================== */
+
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--card-background);
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+    padding: 40px 25px;
+    transition: right 0.3s ease;
+    z-index: 99;
+    border-left: 1px solid var(--border-light);
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-menu a {
+    color: var(--main-text);
+    font-size: 18px;
+  }
+
+  .nav-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+}
+
+/* ==================================================
+   Reduced Motion
+   ================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .feature-card,
+  .pricing-card {
+    transition: none;
+  }
 }
