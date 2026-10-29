@@ -5,3 +5,69 @@ body {
   color: #101b35;
   font-family: Arial, sans-serif;
 }
+/* Global styles */
+
+body {
+  background-color: #f4f7fb;
+  color: #101b35;
+  font-family: Arial, sans-serif;
+}
+/* Navigation bar */
+
+.site-header {
+  background-color: #ffffff;
+  padding: 20px 5%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #101b35;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu a {
+  color: #101b35;
+  text-decoration: none;
+}
+
+.nav-menu a:hover {
+  color: #176bce;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.button-primary {
+  background-color: #176bce;
+  color: #ffffff;
+}
+
+.button-primary:hover {
+  background-color: #101b35;
+}
