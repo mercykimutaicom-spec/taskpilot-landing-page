@@ -4,6 +4,12 @@ TaskPilot is a responsive SaaS landing page for an AI-powered project management
 
 The landing page presents how AI can support smarter task management, project visibility, and team collaboration.
 
+## Live Demo
+
+Explore TaskPilot here:
+
+**[View TaskPilot Live](https://mercykimutaicom-spec.github.io/taskpilot-landing-page/)**
+
 ## Features
 
 - Modern landing page: Clean, responsive design with a purple and neon mint visual identity.
