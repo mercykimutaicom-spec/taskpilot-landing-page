@@ -71,3 +71,16 @@ if (menuToggle && navMenu) {
 if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   document.body.classList.add("reduced-motion");
 }
+// ==================================================
+// Demo Sign-Up Button
+// ==================================================
+
+const getStartedButton = document.getElementById("get-started-free");
+
+if (getStartedButton) {
+  getStartedButton.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    alert("Thanks for signing up! This is a demo project.");
+  });
+}
