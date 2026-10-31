@@ -84,3 +84,33 @@ if (getStartedButton) {
     alert("Thanks for signing up! This is a demo project.");
   });
 }
+// ==================================================
+// Active Navigation Links
+// ==================================================
+
+const sections = document.querySelectorAll("main section[id]");
+const navigationLinks = document.querySelectorAll(".nav-menu a");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const currentSectionId = entry.target.id;
+
+        navigationLinks.forEach((link) => {
+          link.classList.toggle(
+            "active",
+            link.getAttribute("href") === `#${currentSectionId}`,
+          );
+        });
+      }
+    });
+  },
+  {
+    threshold: 0.3,
+  },
+);
+
+sections.forEach((section) => {
+  observer.observe(section);
+});

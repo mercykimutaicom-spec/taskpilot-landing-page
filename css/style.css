@@ -694,6 +694,10 @@ h3 {
   justify-content: flex-end;
   width: auto;
 }
+.nav-menu a.active {
+  color: var(--primary-violet);
+  font-weight: 700;
+}
 
 /* ==================================================
    Reduced Motion
