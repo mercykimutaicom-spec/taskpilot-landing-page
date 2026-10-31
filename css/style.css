@@ -344,8 +344,8 @@ h3 {
 }
 
 .feature-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(30, 27, 75, 0.08);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.01);
 }
 
 .feature-card h3 {
@@ -385,6 +385,14 @@ h3 {
   background: var(--card-background);
   border-radius: 12px;
   border: 1px solid var(--border-light);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(30, 27, 75, 0.08);
 }
 
 .testimonial-card p {
@@ -435,7 +443,7 @@ h3 {
   margin: 0 auto;
 }
 
-.pricing-card {
+ {
   background: var(--card-background);
   padding: 40px 30px;
   border-radius: 12px;
@@ -446,7 +454,7 @@ h3 {
     box-shadow 0.2s ease;
 }
 
-.pricing-card:hover {
+:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
@@ -466,7 +474,7 @@ h3 {
   font-weight: 600;
   text-transform: uppercase;
 }
-
+.pricing-card
 .pricing-card.popular-plan .popular-label {
   position: relative;
   margin: 0 0 20px 0;
@@ -580,7 +588,7 @@ h3 {
   font-size: 20px;
   font-weight: 600;
   color: var(--main-text);
-  text-decoration: none;
+  text-decoration:.pricing-card none;
 }
 
 .footer-brand p {
@@ -691,11 +699,19 @@ h3 {
    Reduced Motion
    ================================================== */
 
-@media (prefers-reduced-motion: reduce) {
+ @media (prefers-reduced-motion: reduce) {
   .feature-card,
-  .pricing-card {
+  .pricing-card,
+  .testimonial-card {
     transition: none;
   }
+
+  .feature-card:hover,
+  .pricing-card:hover,
+  .testimonial-card:hover {
+    transform: none;
+  }
+
 }
 /* ==================================================
    Dashboard Preview
